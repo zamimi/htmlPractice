@@ -1,67 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main2.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuBtn = document.querySelector(".menu-btn");
-        const body = document.body;
-    
-        menuBtn.addEventListener("click", function () {
-          body.classList.toggle("collapsed");
-    
-          // Toggle chevron direction
-          if (menuBtn.classList.contains("fa-chevron-left")) {
-            menuBtn.classList.remove("fa-chevron-left");
-            menuBtn.classList.add("fa-chevron-right");
-          } else {
-            menuBtn.classList.remove("fa-chevron-right");
-            menuBtn.classList.add("fa-chevron-left");
-          }
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Webpage with NavBar</title>
+      <link rel="stylesheet" href="main2.css">
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const menuBtn = document.querySelector(".menu-btn");
+          const body = document.body;
+      
+          menuBtn.addEventListener("click", function () {
+            body.classList.toggle("collapsed");
+      
+            // Toggle chevron direction
+            if (menuBtn.classList.contains("fa-chevron-left")) {
+              menuBtn.classList.remove("fa-chevron-left");
+              menuBtn.classList.add("fa-chevron-right");
+            } else {
+              menuBtn.classList.remove("fa-chevron-right");
+              menuBtn.classList.add("fa-chevron-left");
+            }
+          });
         });
-      });
-    </script>    
-</head>
-<body>
-    <aside>
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        var textWrapper = document.querySelector('.ml9 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+          anime.timeline({loop: true})
+            .add({
+              targets: '.ml9 .letter',
+              scale: [0, 1],
+              duration: 1500,
+              elasticity: 600,
+              delay: (el, i) => 45 * (i+1)
+            }).add({
+              targets: '.ml9',
+              opacity: 0,
+              duration: 1000,
+              easing: "easeOutExpo",
+              delay: 1000
+            });
+      </script>    
+  </head>
+  <body>
+      <aside>
         <button class="menu-btn fa fa-chevron-left"></button>
         <a href="/" class="logo-wrapper">
-          <span class="fa-brands fa-uikit"></span>
+          <span class="fa-solid fa-cat"></span>
           <span class="brand-name">Pacanut</span>
         </a>
         <div class="separator"></div>
         <ul class="menu-items">
-          <li><a href="#"><span class="icon fa fa-house"></span><span class="item-name">Home</span></a><span
+          <li><a href="#Home"><span class="icon fa fa-house"></span><span class="item-name">Home</span></a><span
               class="tooltip">Home</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-layer-group"></span><span class="item-name">Dashboard</span></a>
+          <li><a href="#Dashboard"><span class="icon fa fa-layer-group"></span><span class="item-name">Dashboard</span></a>
             <span class="tooltip">Dashboard</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-chart-line"></span><span class="item-name">Analytics</span></a>
+          <li><a href="#Achievements"><span class="icon fa fa-chart-line"></span><span class="item-name">Acheivements</span></a>
             <span class="tooltip">Analytics</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-chart-simple"></span><span class="item-name">Leaderboard</span></a>
+          <li><a href="#Leadership"><span class="icon fa fa-chart-simple"></span><span class="item-name">Leadership</span></a>
             <span class="tooltip">Leaderboard</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-user"></span><span class="item-name">Account</span></a>
+          <li><a href="#Profile"><span class="icon fa fa-user"></span><span class="item-name">Profile</span></a>
             <span class="tooltip">Account</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-gear"></span><span class="item-name">Settings</span></a>
+          <li><a href="#WorkExp"><span class="icon fa fa-gear"></span><span class="item-name">Work Experience</span></a>
             <span class="tooltip">Settings</span>
           </li>
-          <li><a href="#"><span class="icon fa fa-comment-dots"></span><span class="item-name">Contact</span></a>
+          <li><a href="#Contacts"><span class="icon fa fa-comment-dots"></span><span class="item-name">Contact</span></a>
             <span class="tooltip">Contact</span>
           </li>
         </ul>
       </aside>
       <main>
-        <div class="content">
-          <h1>Welcome to My Server</h1>
+        <section id="Home">
+          <h1>Home</h1>
+          <h3>Hello there, I am</h3><p class="ml9">
+            <span class="text-wrapper">
+              <span class="letter">Coffee mornings</span>
+            </span>
+          </p>
+        </section>
+        <section id="Dashboard">
+          <h1>Dashboard</h1>
           <p>This is a sample content area.</p>
-        </div>
-      </main>      
-</body>
+        </section>
+        <section id="Achievements">
+          <h1>Achievements</h1>
+          <p>This is a sample content area.</p>
+        </section>
+        <section id="Leadership">
+          <h1>Leadership</h1>
+          <p>This is a sample content area.</p>
+        </section>
+        <section id="Profile">
+          <h1>Profile</h1>
+          <p>This is a sample content area.</p>
+        </section>
+        <section id="WorkExp">
+          <h1>Work Experience</h1>
+          <p>This is a sample content area.</p>
+        </section>
+        <section id="Contacts">
+          <h1>Contacts</h1>
+          <p>This is a sample content area.</p>
+        </section>
+      </main>
+  </body>
 </html>

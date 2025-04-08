@@ -41,7 +41,7 @@ aside {
   cursor: pointer;
   transform: translateX(100%);
   box-shadow: 2px 0px 5px 0px #1a1a1a;
-  background: #eb8cde;
+  background: #ac60a2;
   transition: .3s;
 }
 
@@ -59,7 +59,7 @@ a {
   color: white;
 }
 
-.fa-uikit:before {
+.fa-cat:before {
   font-size: 25px;
 }
 
@@ -109,6 +109,7 @@ ul {
 
 .icon {
   font-size: 20px;
+  margin-left: 0;
 }
 
 .item-name {
@@ -143,7 +144,6 @@ ul {
   padding: 10px 0;
 }
 
-
 .collapsed .menu-items a:hover+.tooltip {
   visibility: visible;
   opacity: 1;
@@ -174,10 +174,42 @@ main {
   left: calc(var(--collapsed-width) + 10px);
 }
 
-.content {
-  padding: 20px;
+#Home {
+  padding: 20vh;
+  background: url(prof1.jpg);
+  background-size: cover;
+  background-blend-mode: screen;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px #00000073;
+  padding: 10px;
+  margin: 10px 0; 
+}
+#Dashboard, #WorkExp, #Profile, #Achievements, #Contacts, #Leadership {
+  padding: 20vh;
   background: #9c4c8f;
   border-radius: 10px;
   box-shadow: 0px 0px 15px 0px #00000073;
   padding: 10px;
+  margin: 10px 0; 
+}
+
+.ml9 {
+  position: relative;
+  font-weight: 200;
+  font-size: 4em;
+}
+
+.ml9 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml9 .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
 }
